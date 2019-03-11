@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,n;
+	printf("So, THIS PROGRAM IS TO STORE THE DATA ABOUT YOUR USE!\n");
+	printf("How many uers information you want to input ? Enter here : ");
+	scanf("%d",&n);
+	struct user
+	{
+		char name[20];
+		int age,level;
+	}user1,user2,user[n];
+	FILE *file;
+	file = fopen("C:\\Users\\ROG Gaming\\Documents\\C-Program\\DB-Cprogram\\D_Structure.txt","w");
+    for(i=1;i<=n;i++)
+	{
+	  printf("User %d : \n",i);
+	  printf("Name :");
+	  scanf("%s",&user[i].name);
+      printf("Age :");
+	  scanf("%d",&user[i].age);
+	  printf("Level : ");
+	  scanf("%d",&user[i].level);
+	  fprintf(file,"User %d : \n Name : %s\n Age : %d \n Level : %d \n",i,user[i].name,user[i].age,user[i].level);
+    }
+	fclose(file);
+	return 0;
+}
