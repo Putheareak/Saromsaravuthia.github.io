@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    char username[10];
+	char password[9];
+    printf("| THIA PROGRAM ALLOW THE USER TO ENTER THERIR USERNAME AND LOGIN PASSWORD | \n");
+    FILE *user;
+    user = fopen ("C:\\Users\\ROG Gaming\\Documents\\C-Program\\DB-Cprogram\\Data.txt","w");
+    
+    printf("| ENTER YOUR NAME HERE | : ");
+    scanf("%s",&username);
+    fprintf(user,"|USERNAME IS : %s |\n",username);
+    
+    printf("| ENTER YOUR 8 DIGIT PASSWORD HERE | :");
+    scanf("%s",&password);
+    fprintf(user,"| YOUR PASSWORD IS %s |",password);
+    
+    fclose(user);
+    printf("CONGRATULATION %s, YOUR USERNAME AND PASSWORD HAS BEEN SET!",username);
+	return 0;
+}
