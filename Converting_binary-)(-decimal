@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+int binary_decimal(int n);
+int decimal_binary(int n);
+
+int main()
+{
+	int decision,n;
+	puts("| This program use to convert the number to binary or decimal number |");
+	printf("Enter : | 1. For converting to decimal number | and | 2. For converting to binary number | : ");
+	scanf("%d",&decision);
+	if ( decision == 1 )
+	{
+		printf("Enter your binary  number here : ");
+		scanf("%d",&n);
+		printf("| %d in binary number = %d in decimal number |",n,binary_decimal(n));
+	}
+	if( decision == 2 );
+	{
+		printf("| Enter your decimal number here |  : ")
+	}
+	
+}
+
+int binary_decimal(int n)
+{
+	int reminder,decimal=0,i=0;
+	while(n!=0)
+	{
+	reminder=n%10;
+	n/=10;
+    decimal+= reminder*pow(2,i);
+	i++;
+    }
+	return decimal;
+}
